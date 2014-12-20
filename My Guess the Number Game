@@ -1,0 +1,56 @@
+#Alright. Guess the number game. Let's go.
+#Remember, when making programs, write them in ways that would
+#make it easier to read for another programmer.
+
+import random
+
+guessesTaken=0
+
+#I put the parentheses on different lines to make them easier to see. 
+print (
+    "How are you doing this fine day, friend? What is your name?"
+    )
+
+myName=input()
+
+integer=random.randint(1, 15)
+
+print (
+    "Well, "+myName+", I'm thinking of a number between 1 and 15. "
+    "Wanna take a crack at a  guess? You have 6 chances."
+    )
+
+while guessesTaken<6:
+    print(
+        "Go ahead."
+        )
+    
+    guess=input()
+    guess=int(guess)
+
+    guessesTaken=guessesTaken+1
+
+    if guess<integer:
+        print(
+            "Sorry, too low!"
+            )    
+    if guess>integer:
+        print(
+            "Sorry, too high!"
+            )
+    if guess==integer:
+        break
+    
+if guess==integer:
+    guessesTaken=str(guessesTaken)
+    print(
+        "Congrats on guessing my number, "+myName+"! "
+        "You guessed correctly in "+guessesTaken+" guesses!"
+          )
+
+if guess!=integer:
+    integer=str(integer)
+    print(
+        "Sorry, "+myName+". The number I was thinking of was "+integer+"."
+        )
+
