@@ -4,53 +4,64 @@
 
 import random
 
-guessesTaken=0
+def guessingGame():
+    guessesTaken=0
 
 #I put the parentheses on different lines to make them easier to see. 
-print (
+    print (
     "How are you doing this fine day, friend? What is your name?"
     )
 
-myName=input()
+    myName=input()
 
-integer=random.randint(1, 15)
+    integer=random.randint(1, 15)
 
-print (
+    print (
     "Well, "+myName+", I'm thinking of a number between 1 and 15. "
     "Wanna take a crack at a  guess? You have 6 chances."
     )
 
-while guessesTaken<6:
-    print(
+    while guessesTaken<6:
+        print(
         "Go ahead."
         )
     
-    guess=input()
-    guess=int(guess)
+        guess=input()
+        guess=int(guess)
 
-    guessesTaken=guessesTaken+1
+        guessesTaken=guessesTaken+1
 
-    if guess<integer:
-        print(
+        if guess<integer:
+            print(
             "Sorry, too low!"
             )    
-    if guess>integer:
-        print(
+        if guess>integer:
+            print(
             "Sorry, too high!"
             )
-    if guess==integer:
-        break
+        if guess==integer:
+            break
     
-if guess==integer:
-    guessesTaken=str(guessesTaken)
-    print(
+    if guess==integer:
+        guessesTaken=str(guessesTaken)
+        print(
         "Congrats on guessing my number, "+myName+"! "
         "You guessed correctly in "+guessesTaken+" guesses!"
           )
 
-if guess!=integer:
-    integer=str(integer)
-    print(
+    if guess!=integer:
+        integer=str(integer)
+        print(
         "Sorry, "+myName+". The number I was thinking of was "+integer+"."
         )
 
+playAgain="Yes"
+
+while playAgain=="Yes" or playAgain=="y" or playAgain=="Y" or playAgain=="yes":
+    guessingGame()
+
+    print(
+    "You up for another round?"
+    )
+
+    playAgain=input()
