@@ -1,0 +1,94 @@
+#This is a game where you have to choose a cave. The results of your choice will
+#be determined by good ol' randomness.
+
+import random
+import time
+
+def displayIntro():
+    print(
+        "After a long, arduous journey, you finally arrive at your destination: "
+        "Dragonland. You are one who seeks to gain the magnificent treasures "
+        "rumored to  be here. You have heard tales of this legendary place. Many "
+        "have lost their lives attempting to gain the treasures within "
+        "Dragonland's caves. But fear not! While there are dragons in this land "
+        "that wish for a meal, some dragons in this land are hospitable and "
+        "wish to aid you."
+        )
+    print()
+
+def chooseCave():
+    cave=""
+    while cave !="left" and cave !="right":
+        print(
+            "Which cave will you go into?"
+            )
+        print(
+            "(left or right)"
+            )
+
+        print()
+        
+        cave=input()
+
+        print()
+
+        left=1
+        right=2
+
+    return cave
+
+def checkCave(chosenCave):
+    print(
+        "You approach the cave..."
+        )
+    time.sleep(4)
+
+    print()
+
+    print(
+        "Your knees shake as you stumble around the dim-lit area..."
+        )
+    time.sleep(6)
+
+    print()
+
+    print(
+        "A large dragon jumps out in front of you! Just as your face "
+        "blanches to see the terror before you, the great beast opens its jaws "
+        "and..."
+        )
+    print()
+    time.sleep(15)
+
+    friendlyCave=random.randint(1,2)
+
+    if chosenCave==str(friendlyCave):
+        print(
+            "...gives you its treasure! It seems today was your lucky day!"
+            )
+    else:
+        print(
+            "...gobbles you down in one bite! It's sad to see that your life "
+            "had to end here..."
+            )
+        
+playAgain="Yes"
+
+while playAgain=="Yes" or playAgain=="y" or playAgain=="Y"or playAgain=="yes" or playAgain=="YES":
+    displayIntro()
+
+    input()
+    
+    caveNumber=chooseCave()
+
+    checkCave(caveNumber)
+
+    print()
+
+    time.sleep(3)
+
+    print(
+    "Do you want to play again? (Yes or No)"
+    )
+
+    playAgain=input()
